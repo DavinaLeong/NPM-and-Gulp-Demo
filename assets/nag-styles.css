@@ -1,0 +1,214 @@
+/** html elements start */
+.unselectable {
+    user-select: none;
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+}
+
+section,
+.section {
+    border-top: thick solid #31708F;
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+.section-header {
+    border-bottom: thin dotted #31708F;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.section-header-sub {
+    border-bottom: thin dotted #999;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.section-last {
+    border-bottom: thick solid #31708F;
+}
+
+pre {
+    font-size: 8pt;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+pre.unselectable {
+    background: #ddd;
+    border-color: #bbb;
+}
+
+footer {
+    border-top: thin solid #eee;
+}
+
+code {
+    color: inherit;
+    background: none;
+}
+
+code.impt {
+    color: #c7254e;
+    background: #f9f2f4;
+}
+
+code.windows {
+    color: #31708F;
+    background: #D9EDF7;
+}
+
+code.mac {
+    color: #666;
+    background: #eee;
+}
+/** html elements end */
+
+
+/** tooltip start */
+.tool-tip {
+    border: thin solid #ccc;
+    border-radius: 2px;
+}
+
+.tool-tip:hover {
+    border: thin solid #ccc;
+    border-radius: 2px;
+    cursor: help;
+    background: #feb;
+}
+/** tooltip end */
+
+
+/** folder tree start */
+.tree {
+    font-family: Consolas, Monaco, "Courier New", monotype;
+    margin-top: 20px;
+}
+
+.tree ul {
+    list-style: none;
+    padding-left: 5px;
+}
+
+.tree ul li {
+    padding-left: 16px;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.tree ul li:before {
+    content: '';
+    height: 1px;
+    width: 10px;
+    background-color: #333;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    margin: auto;
+}
+
+.tree ul li:after {
+    content: '';
+    width: 1px;
+    height: 100%;
+    background-color: #333;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.tree ul li:last-child:after {
+    height: 10px;
+}
+
+.tree ul a {
+    cursor: pointer;
+}
+
+.tree ul a:hover {
+    color: #333;
+    text-decoration: none;
+}
+/** folder tree end */
+
+
+/** command line start */
+.command-line {
+    margin-bottom: 10px;
+    padding: 0;
+    border: thin solid #ccc;
+    border-radius: 4px;
+}
+
+.command-line .command-line-header {
+    padding: 2px 5px;
+    color: #000;
+    border-bottom: thin solid #ccc;
+    border-radius: 4px 4px 0 0;
+    background-color: #ddd;
+    font-size: 10pt;
+}
+
+.command-line .command-line-header .exit {
+    color: #D9534F;
+}
+
+.command-line .command-line-header .minimize {
+    color: #F0AD4E;
+}
+
+.command-line .command-line-header .maximize {
+    color: #5CB85C;
+}
+
+.command-line .command-line-body,
+.command-line .command-line-body-end {
+    padding: 10px 5px 5px 5px;
+    color: dimgray;
+    background-color: white;
+    font-family: Consolas, Monaco, "Courier New", monotype;
+    font-size: 12pt;
+}
+
+.command-line .command-line-body,
+.command-line .command-line-body-end {
+    border-radius: 0 0 4px 4px;
+}
+
+.command-line .command-line-body .command-line-command,
+.command-line .command-line-body-end .command-line-command {
+    color: black;
+}
+
+.command-line .command-line-body ul,
+.command-line .command-line-body-end ul {
+    list-style: none;
+    padding-left: 5px;
+}
+
+.command-line .command-line-body ul li,
+.command-line .command-line-body-end ul li {
+    padding-left: 0;
+}
+
+.command-line .command-line-body ul li:before,
+.command-line .command-line-body-end ul li:before {
+    content: "\0024 ";
+    color: black;
+    padding-right: 5px;
+}
+
+.command-line .command-line-footer {
+    padding: 2px 5px;
+    border-top: thin solid #ccc;
+    border-radius: 0 0 4px 4px;
+    color: #333;
+    background-color: #f5f5f5;
+    font-size: 10pt;
+}
+/** command line end */

@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="./vendor/font-awesome/css/font-awesome.min.css" type="text/css" />
+
+    <!-- custom styles -->
+    <link rel="stylesheet" href="./assets/nag-styles.css" type="text/css" />
+    <link rel="stylesheet" href="./dist/my-css.min.css" type="text/css" />
+    <link rel="icon" href="./assets/favicon.png" type="image/png" />
+
+    <title>NPM &amp; Gulp (Detailed Exercise)</title>
+</head>
+
+<body id="top">
+    <!-- .container start -->
+    <div class="container">
+        <h1 class="page-header">NPM &amp; Gulp (Detailed Exercise)</h1>
+
+        <!-- #notesAccordion start -->
+        <div class="panel-group" id="notesAccordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-info">
+                <div class="panel-heading" role="tab" id="notesHeadingOne">
+                    <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" data-parent="#notesAccordion" href="#notesCollapseOne" aria-expanded="true" aria-controls="notesCollapseOne">
+                            <i class="fa fa-info fa-fw"></i> Some Notes
+                        </a>
+                    </h4>
+                </div>
+                <div id="notesCollapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="notesHeadingOne">
+                    <div class="panel-body">
+                        <ul class="text-info">
+                            <li>To do this exercise, clear the <code>dist</code> and <code>vendor</code> folders.</li>
+                            <li>This page should then look <strong>plain, with little styling</strong> because the resources have not yet been installed.</li>
+                            <li>This branch gives you a more detailed walkthrough of NPM and Gulp.</li>
+                            <li>Hover over any grey-bordered text to display a <span class="tool-tip" title="Hi!">tooltip</span> containing more information on subject.</li>
+                            <li>The process used in this course cater's to the Shipyard's workflow and may not necessarily apply to other companies.</li>
+                            <li>Dark-grey <code>&lt;pre&gt;</code>s are unselectable.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #notesAccordion end -->
+        <br/>
+
+        <!-- #mainRow start -->
+        <div id="mainRow" class="row">
+            <!-- #mainCol start -->
+            <div id="mainCol" class="col-md-9">
+                <!-- #exercisePanel start -->
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h2 class="panel-title"><i class="fa fa-pencil fa-fw"></i> Exercises</h2>
+                    </div>
+                    <div class="panel-body">
+                        <!-- #accordion start -->
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div id="accordionIntroPanel" class="panel panel-default">
+                                <div id="accordionIntro" class="panel-heading" role="tab" id="headingOne">
+                                    <h4 id="100" class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            1. Intro and Setup
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                    <!-- #accordionIntroPanel > panel-body start -->
+                                    <div class="panel-body">
+                                        <ul id="100Nav" class="nav nav-pills">
+                                            <li role="presentation"><a href="#110">1.1. Intro and Trivia</a></li>
+                                            <li role="presentation"><a href="#120">1.2. Clone Repo</a></li>
+                                            <li role="presentation"><a href="#130">1.3. About this Repo</a></li>
+                                        </ul>
+                                        <br/>
+                                        <p class="lead">This section gives you a brief overview of this <span class="text-primary">exercise</span> and guides you in preparing your development environment.</p>
+
+                                        <section>
+                                            <h3 id="110" class="section-header">1.1. Intro and Trivia</h3>
+                                            <p><strong>NPM</strong> stands for <em>Node Package Manager</em> and it's used to maintain and update JavaScript packages. <em class="text-info">Bower</em> is a common and popular alternative.</p>
+                                            <p><strong>Gulp</strong> is a task runner which helps automate mundane and repetitve tasks like minifying CSS and JS scripts and compiling technologies like SASS and TypeScript. <em class="text-info">Grunt</em>                                                is another popular alternative to Gulp.
+                                            </p>
+                                            <p>See <span class="text-info">Useful Links</span> for more details if interested.</p>
+                                        </section>
+
+                                        <section>
+                                            <h3 id="120" class="section-header">1.2. Clone Repo</h3>
+                                            <p>Once you have <kbd>cloned</kbd> this repo into the <code class="windows">path/to/www/npm-and-gulp</code> folder for Windows<i class="fa fa-windows fa-fw"></i> or <code class="mac">path/to/mamp/htdocs/npm-and-gulp</code>                                                folder for Mac<i class="fa fa-apple fa-fw"></i>, <kbd>checkout</kbd> the <code class="impt">project_completed</code> branch for how the page should look like at the end of this exercise.</p>
+
+                                            <p><kbd>Re-checkout</kbd> the <code class="impt">_MASTER</code> branch and create a branch from it with <code class="impt">your-name</code>.</p>
+                                        </section>
+
+                                        <section class="section-last">
+                                            <h3 id="130" class="section-header">1.3. About this Repo</h3>
+                                            <!-- #treeAccordion start -->
+                                            <div class="panel-group" id="treeAccordion" role="tablist" aria-multiselectable="true">
+                                                <div class="panel panel-info">
+                                                    <div class="panel-heading" role="tab" id="treeHeadingOne">
+                                                        <h4 class="panel-title">
+                                                            <a role="button" data-toggle="collapse" data-parent="#treeAccordion" href="#treeCollapseOne" aria-expanded="true" aria-controls="treeCollapseOne">
+                                                                <i class="fa fa-folder fa-fw"></i> Folder Structure <small>(expand)</small>
+                                                            </a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="treeCollapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="treeHeadingOne">
+                                                        <div class="panel-body">
+                                                            <div class="tree">
+                                                                <ul>
+                                                                    <li><i class="fa fa-folder-open fa-fw"></i>root
+                                                                        <ul>
+                                                                            <li><i class="fa fa-folder-open fa-fw"></i>static_repo
+                                                                                <ul>
+                                                                                    <li><i class="fa fa-folder fa-fw"></i>dist</li>
+                                                                                    <li><i class="fa fa-folder-open fa-fw"></i>src
+                                                                                        <ul>
+                                                                                            <li><i class="fa fa-hashtag fa-fw"></i>col-background.css</li>
+                                                                                            <li><i class="fa fa-hashtag fa-fw"></i>col-border.css</li>
+                                                                                            <li><i class="fa fa-hashtag fa-fw"></i>col-color.css</li>
+                                                                                            <li><i class="fa fa-hashtag fa-fw"></i>col-text-align.css</li>
+                                                                                        </ul>
+                                                                                    </li>
+                                                                                    <li><i class="fa fa-folder fa-fw"></i>vendor</li>
+                                                                                    <li><i class="fa fa-picture-o fa-fw"></i>favicon.png</li>
+                                                                                    <li><i class="fa fa-picture-o fa-fw"></i>logo.png</li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li><i class="fa fa-html5 fa-fw"></i>index.html</li>
+                                                                        </ul>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- #treeAccordion start -->
+
+                                            <p>There should be a <code class="impt">static_repo</code> and a single-page <code class="impt">index.html</code> file. The <code>static_repo</code> should contain 2 images and 3 folders, 2 of which are empty.
+                                                The empty folders are where your Gulp-generated files will go to eventually.</p>
+                                        </section>
+
+                                        <p class="text-center"><a href="#top"><i class="fa fa-arrow-circle-up fa-fw"></i> Page Top</a> | <a href="#100"><i class="fa fa-arrow-up fa-fw"></i> Section Top</a></p>
+                                    </div>
+                                    <!-- #accordionIntroPanel > panel-body end -->
+                                </div>
+                            </div>
+                            <div id="accordionNpm" class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                    <h4 id="200" class="panel-title">
+                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            2. Node &amp; NPM
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+                                    <!-- #accordionNpm > panel-body start -->
+                                    <div class="panel-body">
+                                        <ul id="200Nav" class="nav nav-pills">
+                                            <li role="presentation"><a href="#210">2.1. Install Node &amp; NPM</a></li>
+                                            <li role="presentation"><a href="#220">2.2. Generate package.json</a></li>
+                                            <li role="presentation"><a href="#230">2.3. Installing NPM Packages</a></li>
+                                            <li role="presentation"><a href="#240">2.4. Extra Reads</a></li>
+                                        </ul>
+                                        <br/>
+                                        <p class="lead">This section introduces you to <span class="text-primary">NPM</span>. It runs you through the setup process and common commands used to manage your packages. It also gives you a brief explanation on the <code>package.json</code>                                            file.</p>
+
+                                        <section>
+                                            <h3 id="210" class="section-header">2.1. Install Node &amp; NPM</h3>
+                                            <div class="alert alert-info">
+                                                <i class="fa fa-info-circle fa-fw"></i> <small><strong>NOTE:</strong></small> If you have existing project later than <em>Arrowana</em> set-up and running, you should already have NodeJS and NPM installed.
+                                            </div>
+
+                                            <h4 id="211" class="section-header-sub">2.1.1. NodeJS</h4>
+                                            <p><a href="https://nodejs.org/en/" target="_blank">Download and install</a> the lastes <strong>LTS version</strong>.</p>
+
+                                            <h4 id="212" class="section-header-sub">2.1.2. NPM</h4>
+                                            <p>You need to use the command line to install NPM.</p>
+                                            <p><kbd>Open</kbd> up the <code class="windows">cmd</code> / <code class="windows">powershell</code> in Windows or the <code class="mac">terminal</code> in Mac and navigate to this project folder. The command for
+                                                both systems should be <code class="impt tool-tip" title="change directory">cd</code>.</p>
+                                            <div class="alert alert-info">
+                                                <i class="fa fa-info-circle fa-fw"></i> <small><strong>TIP:</strong></small> On Windows, you can run CMD commands in PowerShell.
+                                            </div>
+
+                                            <div class="command-line">
+                                                <div class="command-line-header">
+                                                    <i class="fa fa-circle fa-fw exit"></i><i class="fa fa-circle fa-fw minimize"></i><i class="fa fa-circle fa-fw maximize"></i> &nbsp;&nbsp;Terminal
+                                                </div>
+                                                <div class="command-line-body">
+                                                    <ul>
+                                                        <li><span class="command-line-command">npm</span> install -g npm</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="command-line-footer">
+                                                    The <code>-g</code> flag tells NPM to install a package globally.
+                                                </div>
+                                            </div>
+
+                                            <h4 id="213" class="section-header-sub">2.1.3. Test Installation</h4>
+                                            <p><kbd>Run</kbd> these commands to test Node and NPM.</p>
+                                            <div class="command-line">
+                                                <div class="command-line-header">
+                                                    <i class="fa fa-circle fa-fw exit"></i><i class="fa fa-circle fa-fw minimize"></i><i class="fa fa-circle fa-fw maximize"></i> &nbsp;&nbsp;Terminal
+                                                </div>
+                                                <div class="command-line-body-end">
+                                                    <ul>
+                                                        <li><span class="command-line-command">node</span> -v</li>
+                                                        <li><span class="command-line-command">npm</span> --version</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <p>If installed correctly, you should see Node's and NPM's repective version numbers output in the <span class="tool-tip" title="Windows: CMD/PowerShell; Mac: Terminal">command line</span>.</p>
+                                        </section>
+
+                                        <section>
+                                            <h3 id="220" class="section-header">2.2. Generate <code>package.json</code></h3>
+                                            <p>Now, we move on to initializing NPM.</p>
+
+                                            <h4 id="221" class="section-header-sub">2.2.1. Initializing NPM</h4>
+                                            <p><kbd>Navigate</kbd> to the <code>static_repo</code> folder and <kbd>run</kbd>:</p>
+                                            <div class="command-line">
+                                                <div class="command-line-header">
+                                                    <i class="fa fa-circle fa-fw exit"></i><i class="fa fa-circle fa-fw minimize"></i><i class="fa fa-circle fa-fw maximize"></i> &nbsp;&nbsp;Terminal
+                                                </div>
+                                                <div class="command-line-body-end">
+                                                    <ul>
+                                                        <li><span class="command-line-command">npm</span> init</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <p>This will generate a <code class="impt">package.json</code> file for you. You can fill in <em class="tool-tip" title="Like... NPM and Gulp Exercise">description</em> and <em class="tool-tip" title="Like.. SUPER AWESOME PROGRAMMER">author</em>                                                with whatever you want. Leave the others as default by pressing <kbd>Enter</kbd> or <kbd>Return</kbd>.</p>
+                                            <p>This file defines what packages are necessary for the project to function.</p>
+                                            <p>Now is a good time to <kbd>commit</kbd> your newly generated <code>package.json</code> file.</p>
+                                        </section>
+
+                                        <section>
+                                            <h3 id="230" class="section-header">2.3. Installing NPM Packages</h3>
+                                            <p>Make sure you are still in the <code class="impt">static_repo</code> folder in your terminal.</p>
+
+
+                                            <h4 id="231" class="section-header-sub">2.3.1. Installing a Package</h4>
+                                            <p>Commands for installing a package:</p>
+                                            <table class="table table-bordered">
+                                                <tr>
+                                                    <td>Default</td>
+                                                    <td><code class="impt">npm install &lt;package-name&gt;</code></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Specific version</td>
+                                                    <td><code class="impt">npm install &lt;package-name&gt;&#64;&lt;version.number&gt;</code></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Latest version</td>
+                                                    <td><code class="impt">npm install &lt;package-name&gt;&#64;latest</code></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Shorthand</td>
+                                                    <td><code class="impt">npm i &lt;package-name&gt;&#64;latest</code></td>
+                                                </tr>
+                                            </table>
+
+                                            <p>Let's try
+                                                <kdb>installing</kdb> the lastest version of <span class="text-info">Bootstrap 3</span>.</p>
+                                            <div class="command-line">
+                                                <div class="command-line-header">
+                                                    <i class="fa fa-circle fa-fw exit"></i><i class="fa fa-circle fa-fw minimize"></i><i class="fa fa-circle fa-fw maximize"></i> &nbsp;&nbsp;Terminal
+                                                </div>
+                                                <div class="command-line-body">
+                                                    <ul>
+                                                        <li><span class="command-line-command">npm</span> install --save bootstrap</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="command-line-footer">
+                                                    By default, NPM installs the <em>latest</em> version of the package if it is not yet defined in <code>package.json</code>.
+                                                    <br/>Otherwise, it will install the specified version; e.g. <code>"bootstrap": "3.3.7"</code>. See <a class="tool-tip" title="2. Node and NPM > 2.4. Extra Reading > 2.4.2 Interpreting Version Numbers of package.json"
+                                                        href="#242">Interpreting Version Numbers of package.json</a>.
+                                                </div>
+                                            </div>
+                                            <p>You will see a <code class="impt">node_modules</code> folder inside the <code>static_repo</code> folder. Inside the <code>node_modules</code> folder, you should see a <code class="impt">boostrap</code> folder.</p>
+                                            <div class="alert alert-danger">
+                                                <i class="fa fa-exclamation-triangle fa-fw"></i> <small><strong>WARNING:</strong></small> <strong>DO NOT</strong> commit the <code class="impt">node_modules</code> folder. Always remember to <kbd>GIT-ignore</kbd>                                                this folder.
+                                            </div>
+                                            <p>The <code>node_modules</code> folder contains alot of files and unnecessarily overloads your repo, increasing the time it takes to do GIT operations. Instead, ensure the <code>package.json</code> is updated
+                                                with the necessary packages by using the <code class="impt">--save</code> and <code class="impt">--save-dev</code> flags and commit that. Then it's up to the individual developer to install the necessary
+                                                NPM packages for their development. See <a class="tool-tip" title="2. Node and NPM > 2.4. Extra Reading > 2.4.1. --save and --save-dev Flags" href="#241">--save and --save-dev Flags</a>.</p>
+                                            <div class="alert alert-success">
+                                                <i class="fa fa-pencil-square-o fa-fw"></i> <small><strong>PRACTICE:</strong></small> <kbd>Install</kbd> the <span class="text-info">Font Awesome</span> NPM package.
+                                            </div>
+                                            <p>To find the NPM package's name of the resource, <kbd>search</kbd> for it on <a href="https://www.npmjs.com/" target="_blank">NPM's website<i class="fa fa-external-link fa-fw"></i></a>.</p>
+
+
+                                            <h4 id="232" class="section-header-sub">2.3.2. Installing a Specific Version of a Package</h4>
+                                            <p>Now, let's
+                                                <kdb>install</kdb> the <code class="impt">2.4.1</code> version of <code class="impt">jQuery</code> as jQuery 3 is incompatible with Bootstrap 3.</p>
+                                            <div class="command-line">
+                                                <div class="command-line-header">
+                                                    <i class="fa fa-circle fa-fw exit"></i><i class="fa fa-circle fa-fw minimize"></i><i class="fa fa-circle fa-fw maximize"></i> &nbsp;&nbsp;Terminal
+                                                </div>
+                                                <div class="command-line-body-end">
+                                                    <ul>
+                                                        <li><span class="command-line-command">npm</span> install --save jquery@2.4.1</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <p>You should now see a <code class="impt">jquery</code> folder inside the <code class="impt">node_modules</code> folder.</p>
+                                            <br/>
+                                            <div class="alert alert-info">
+                                                <i class="fa fa-info-circle"></i> <small><strong>NOTE:</strong></small> There are no visual changes yet because we have not copied over the packages we installed. We will do this in the next section using
+                                                <strong>Gulp</strong>.
+                                            </div>
+                                            <p><kbd>Open</kbd> up the <code class="impt">package.json</code> and it should look something like this:
+                                                <pre class="unselectable">{
+    "name": "npm-and-gulp",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://DavinaLSY@bitbucket.org/DavinaLSY/npm-and-gulp.git"
+    },
+    "author": "Davina Leong",
+    "license": "ISC",
+    "homepage": "https://bitbucket.org/DavinaLSY/npm-and-gulp#readme",
+    "dependencies": {
+        "bootstrap": "^3.3.7",
+        "font-awesome": "^4.7.0",
+        "jquery": "~2.2.4"
+    }
+}</pre></p>
+                                            <div class="alert alert-warning">
+                                                <i class="fa fa-lightbulb-o fa-fw"></i> <small><strong>HINT:</strong></small> You might have to change the <span class="text-info">jquery prefix</span>.
+                                            </div>
+                                            <p><kbd>Commit</kbd> and <kbd>push</kbd> all changes except the <code class="impt">node_modules</code> folder.</p>
+                                        </section>
+
+                                        <section class="section-last">
+                                            <h3 id="240" class="section-header">2.4. Extra Reads</h3>
+
+                                            <h4 id="241" class="section-header-sub">2.4.1. <code class="tool-tip" title="Shorthand: -S">--save</code> and <code class="tool-tip" title="Shorthand: -D">--save-dev</code> Flags</h4>
+                                            <p>Quoted from <a href="https://docs.npmjs.com/files/package.json#dependencies" target="_blank">NPM docs<i class="fa fa-external-link fa-fw"></i></a>:</p>
+                                            <blockquote>
+                                                <p>Dependencies are specified in a simple object that maps a package name to a version range. The version range is a string which has one or more space-separated descriptors. Dependencies can also be identified
+                                                    with a tarball or git URL.</p>
+                                                <p><strong>Please do not put test harnesses or transpilers in your dependencies object.</strong> See <strong>devDependencies</strong>, below.</p>
+                                            </blockquote>
+                                            <p>In other words, use the <code class="impt">--save</code> flag for packages necessary for the project run properly like jQuery and Bootstrap.</p>
+                                            <p>Use the <code class="impt">--save-dev</code> flag for packages necessary for the project's developement like task runners (Gulp/Grunt), test suites and precomilpers (SASS and TypeScript compilers).</p>
+
+
+                                            <h4 id="242" class="section-header-sub">2.4.2. Interpreting Version Numbers of <code>package.json</code></h4>
+                                            <table class="table table-bordered">
+                                                <tr>
+                                                    <td>No prefixes</td>
+                                                    <td>Install package <strong>at</strong> specified version of package; e.g. <code>"bootstrap": "3.3.7"</code>.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Caret(^)</td>
+                                                    <td>Install <em>major</em> package version <strong>equal to or later than</strong> specified version; e.g. <code>"bootstrap": "^3.3.7"</code>.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Tilde(~)</td>
+                                                    <td>Install <em>minor</em> package version <strong>equal to or later than</strong> specified version; e.g. <code>"bootstrap": "~3.3.7"</td>
+                                                </tr>
+                                            </table>
+                                            <div class="well well-sm">
+                                                <h5 id="caret-vs-tilde">Caret(^) vs Tilde(~)</h5>
+                                                <p>Let's use an abitrary package <em>Package XYZ</em> as example and say it's at version <code>1.4.1</code>. <code class="impt">"package-xyz": "^1.4.1"</code> will prompt NPM to install the latest release
+                                                        of Package XYZ. If version 2 comes out, NPM will install Package XYZ 2. <code class="impt">"package-xyz": "~1.4.1"</code> tells NPM to only install the lastest version of Package XYZ 1. It won't
+                                                        install Package XYZ 2.</p>
+                                    </div>
+
+
+                                    <h4 id="243" class="section-header-sub">2.4.3. Other Common NPM Commands</h4>
+                                    <table class="table table-bordered">
+                                        <tr>
+                                            <td><code class="impt">npm ls</code></td>
+                                            <td>Lists all locally installed packages.<br/> Add the <code class="impt">-g</code> flag to view globally installed packages.<br/> Add the <code class="impt">-l</code> to list package details.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code class="impt">npm uninstall &lt;package-name&gt;</code><br/> Shorthand: <code class="impt">npm un &lt;package-name&gt;</code></td>
+                                            <td>Uninstalls a package.<br/> As usual, add the <code class="impt">-g</code> flag to uninstall a global package.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code class="impt">npm update</code></td>
+                                            <td>Update local packages.</td>
+                                        </tr>
+                                    </table>
+
+
+                                    <h4 id="244" class="section-header-sub">2.4.4. Specific Documentation on NPM</h4>
+                                    <ul>
+                                        <li><a href="https://docs.npmjs.com/getting-started/what-is-npm">Getting Started<i class="fa fa-external-link fa-fw"></i></a></li>
+                                        <li><a href="https://docs.npmjs.com/cli/access">CLI Commands<i class="fa fa-external-link fa-fw"></i></a></li>
+                                        <li><a href="https://docs.npmjs.com/files/package.json">package.json<i class="fa fa-external-link fa-fw"></i></a></li>
+                                    </ul>
+                                    </section>
+
+                                    <p class="text-center"><a href="#top"><i class="fa fa-arrow-circle-up fa-fw"></i> Page Top</a> | <a href="#200"><i class="fa fa-arrow-up fa-fw"></i> Section Top</a></p>
+                                </div>
+                                <!-- #accordionNpm > panel-body end -->
+                            </div>
+                        </div>
+                        <div id="accordionGulp" class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 id="300" class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            3. Gulp
+                                        </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+                                <!-- #accordionGulp > panel-body start -->
+                                <div class="panel-body">
+                                    <ul id="300Nav" class="nav nav-pills">
+                                        <li role="presentation"><a href="#310">3.1. Installation</a></li>
+                                        <li role="presentation"><a href="#320">3.2. Gulp Tasks</a></li>
+                                        <li role="presentation"><a href="#330">3.3. Extra Reads</a></li>
+                                    </ul>
+                                    <br/>
+                                    <p class="lead">This section runs you through the setup process for <span class="text-primary">Gulp</span> and implemention of run-once tasks.</p>
+
+                                    <section>
+                                        <h3 id="310" class="section-header">3.1. Installation</h3>
+
+                                        <h4 id="311" class="section-header-sub">3.1.1. Gulp CLI <small>NPM Package</small></h4>
+                                        <p><a href="https://www.npmjs.com/package/gulp-cli" target="_blank">NPM package page<i class="fa fa-external-link fa-fw"></i></a></p>
+                                        <p><kbd>Open</kbd> up your <span class="tool-tip" title="Windows: CMD/PowerShell; Mac: Terminal">command line</span> and make sure you're in the <code class="impt">static_repo</code> folder.</p>
+                                        <p>We are going to install the <span class="text-info">Gulp command line interface</span>. <code class="impt">gulp-cli</code> allows us to run <code>gulp</code> commands on the <span class="tool-tip" title="Windows: CMD/PowerShell; Mac: Terminal">command line</span>.
+                                            <kbd>Run</kbd>:</p>
+                                        <div class="command-line">
+                                            <div class="command-line-header">
+                                                <i class="fa fa-circle fa-fw exit"></i><i class="fa fa-circle fa-fw minimize"></i><i class="fa fa-circle fa-fw maximize"></i> &nbsp;&nbsp;Terminal
+                                            </div>
+                                            <div class="command-line-body-end">
+                                                <ul>
+                                                    <li><span class="command-line-command">npm</span> install --g gulp-cli</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <p>Then, <kbd>run</kbd>:</p>
+                                        <div class="command-line">
+                                            <div class="command-line-header">
+                                                <i class="fa fa-circle fa-fw exit"></i><i class="fa fa-circle fa-fw minimize"></i><i class="fa fa-circle fa-fw maximize"></i> &nbsp;&nbsp;Terminal
+                                            </div>
+                                            <div class="command-line-body-end">
+                                                <ul>
+                                                    <li><span class="command-line-command">gulp</span> --version</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <p>... to test <code>gulp-cli</code> installation.</p>
+
+
+                                        <h4 id="312" class="section-header-sub">3.1.2. Gulp <small>NPM Package</small></h4>
+                                        <p><a href="https://www.npmjs.com/package/gulp" target="_blank">NPM package page<i class="fa fa-external-link fa-fw"></i></a></p>
+                                        <p>Next, we will <kbd>install</kbd> <span class="text-primary">Gulp</span> locally via NPM using the <code class="impt">--save-dev</code> flag. Gulp is a task runner which helps increase productivity during developement.
+                                            In other words, we only need the Gulp package if we are doing development work on this project. Viewers of this page don't need Gulp to view this page properly. <kbd>Run</kbd>:</p>
+                                        <div class="command-line">
+                                            <div class="command-line-header">
+                                                <i class="fa fa-circle fa-fw exit"></i><i class="fa fa-circle fa-fw minimize"></i><i class="fa fa-circle fa-fw maximize"></i> &nbsp;&nbsp;Terminal
+                                            </div>
+                                            <div class="command-line-body-end">
+                                                <ul>
+                                                    <li><span class="command-line-command">npm</span> install --save-dev gulp</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+
+                                        <h4 id="313" class="section-header-sub">3.1.3. Del <small>NPM Package</small></h4>
+                                        <p><a href="https://www.npmjs.com/package/del" target="_blank">NPM package page<i class="fa fa-external-link fa-fw"></i></a></p>
+                                        <p>We also need to <kbd>install</kbd> the <span class="text-info">Del</span> NPM packge. We need this package to <span class="text-info">delete</span> files and folders. You will see this in use later when we start
+                                            creating <span class="text-info">Gulp tasks</span>. Anyway, go ahead and <kbd>run</kbd>:</p>
+                                        <div class="command-line">
+                                            <div class="command-line-header">
+                                                <i class="fa fa-circle fa-fw exit"></i><i class="fa fa-circle fa-fw minimize"></i><i class="fa fa-circle fa-fw maximize"></i> &nbsp;&nbsp;Terminal
+                                            </div>
+                                            <div class="command-line-body-end">
+                                                <ul>
+                                                    <li><span class="command-line-command">npm</span> install --save-dev del</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <p><kbd>Open</kbd> up the <code class="impt">package.json</code> and it should look something like this:
+                                            <pre class="unselectable">{
+    "name": "npm-and-gulp",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://DavinaLSY@bitbucket.org/DavinaLSY/npm-and-gulp.git"
+    },
+    "author": "Davina Leong",
+    "license": "ISC",
+    "homepage": "https://bitbucket.org/DavinaLSY/npm-and-gulp#readme",
+    "dependencies": {
+        "bootstrap": "^3.3.7",
+        "font-awesome": "^4.7.0",
+        "jquery": "~2.2.4"
+    },
+    "devDependencies": {
+        "del": "^3.0.0",
+        "gulp": "^3.9.1"
+    }
+}</pre></p>
+                                        <p>Notice the new <code class="impt">devDependencies</code> section? This is where NPM saves your <code>--save-dev</code> packages.</p>
+                                    </section>
+
+                                    <section>
+                                        <h3 id="320" class="section-header">3.2. Gulp Tasks <small>(<code>gulpfile.js</code>)</small></h3>
+                                        <p>Now the fun part begins... yay! We'll create <span class="text-info">Gulp tasks</span> to help us copy over, delete and update the '<span class="tool-tip" title="'--save-dev'">dependencies</span>' packages into
+                                            the <code>vendors</code> folder.</p>
+
+
+                                        <h4 id="321" class="section-header-sub">3.2.1 Import Packages into <code>gulpfile.js</code></h4>
+                                        <p><kbd>Create</kbd> the <code class="impt">gulpfile.js</code> in the <code class="impt">static_repo</code> folder. This is where Gulp looks to for what tasks to run.</p>
+                                        <p><kbd>Open</kbd> it and <kbd>copy &amp; paste</kbd> the following code:
+                                            <code><pre>var gulp = require('gulp');
+var del = require('del');</pre></code></p>
+
+
+                                        <h4 id="322" class="section-header-sub">3.2.2. The <code>copy-vendor</code> Task</h4>
+
+                                        <p><br/><strong class="text-info">Bootstrap</strong></p>
+                                        <p>Next, <kbd>copy &amp; paste</kbd> these lines of code into the <code class="impt">gulpfile.js</code> and <kbd>save</kbd>.
+                                            <pre>gulp.task('copy-vendor', function() {
+    // bootstrap
+    gulp.src('./node_modules/bootstrap/dist/**')
+        .pipe(gulp.dest('vendor/bootstrap'));
+    console.log('~ copied bootstrap files');
+});</pre></p>
+                                        <div class="well well-sm">
+                                            <h5 id="a-little-regex">What's the <code class="impt">/**</code> on <code>line 3</code>?</h5>
+                                            <ul>
+                                                <li>The <code>/**</code> tells gulp to copy <em>everything</em> that is inside the <code>node_modules/bootstrap/dist</code> folder.</li>
+                                                <li>Sometimes you might see something like this <code class="impt">*.js</code>. This means only copy over all JavaScript files; <code>*.css</code> only copy CSS files, etc.</li>
+                                            </ul>
+                                        </div>
+
+                                        <p>Anyway <kbd>run</kbd> the following command.</p>
+                                        <div class="command-line">
+                                            <div class="command-line-header">
+                                                <i class="fa fa-circle fa-fw exit"></i><i class="fa fa-circle fa-fw minimize"></i><i class="fa fa-circle fa-fw maximize"></i> &nbsp;&nbsp;Terminal
+                                            </div>
+                                            <div class="command-line-body-end">
+                                                <ul>
+                                                    <li><span class="command-line-command">gulp</span> copy-vendor</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <p>Notice the task's name <code>copy-vendor</code> being output into the terminal? Take note of that for later.</p>
+                                        <p>Now <kbd>refresh</kbd> the page.</p>
+                                        <div class="alert alert-info">
+                                            <i class="fa fa-info-circle fa-fw"></i> <small><strong>TIP:</strong></small> You might need to refresh (hard refresh) the cache.
+                                        </div>
+                                        <p>Whoo! Suddenly the page looks magically beautiful and... almost a lil' blinding...</p>
+
+                                        <p><br/><strong class="text-info">jQuery</strong></p>
+                                        <div class="alert alert-success">
+                                            <i class="fa fa-pencil-square-o fa-fw"></i> <small><strong>PRACTICE:</strong></small> Now, do the same for <span class="text-info">jQuery</span>. You just need the <code class="impt">.js</code> files.
+                                        </div>
+                                        <div class="alert alert-warning">
+                                            <i class="fa fa-lightbulb-o fa-fw"></i> <small><strong>HINT:</strong></small> You might need to look into the <code class="impt">node_modules/jquery</code> folders to see where the files are located.
+                                        </div>
+                                        <p><kbd>Hard-refresh</kbd> the page to reload the cache.</p>
+                                        <p>If done correctly, you should be able to&nbsp;
+                                            <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#testModal">
+                                                    Launch a Modal <i class="fa fa-rocket fa-fw"></i>
+                                                </button> &nbsp;and expande and collapse this <span class="text-info">Exercise Accordion</span>.
+                                        </p>
+
+                                        <p><br/><strong class="text-info">Font Awesome</strong></p>
+                                        <p>This one's a little tricky as we don't want the <code>less</code> and <code>sass</code> folders. So <kbd>copy &amp; paste</kbd> the following code into the <code class="impt">copy-vendor</code> task.</p>
+                                        <pre>// font awesome
+gulp.src([
+    './node_modules/font-awesome/**/*.css',
+    './node_modules/font-awesome/**/*-webfont.*'
+])
+    .pipe(gulp.dest('vendor/font-awesome'));
+console.log('~ copied font awesome files');</pre>
+                                        <p>You should now see icons <i class="text-primary fa fa-flag fa-fw"></i> at various point of the page. On this
+                                            <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#testModal">
+                                                    This Modal <i class="fa fa-rocket fa-fw"></i>
+                                                </button>&nbsp;, you should see icons beside the <span class="text-info">Windows, Mac and Android</span> labels.
+                                        </p>
+
+
+
+                                        <h4 id="323" class="section-header-sub">3.2.3 The <code>clear-vendor</code> Task</h4>
+                                        <p>Now we're going to make use of the <span class="text-info">Del</span> package we imported earlier.</p>
+                                        <p><kbd>Copy &amp; paste</kbd> the following code just after the <code class="impt">copy-vendor</code> task.</p>
+                                        <pre>gulp.task('clear-vendor', function() {
+    del.sync([
+        './vendor/bootstrap/**',
+        '!./vendor/'
+    ]);
+});</pre>
+                                        <div class="alert alert-success">
+                                            <i class="fa fa-pencil-square-o fa-fw"></i> <small><strong>PRACTICE:</strong></small> Figure out the <span class="text-info">command</span> to execute <span class="tool-tip" title="copy-vendor">this</span> Gulp
+                                            task and <kbd>run</kbd> it.
+                                        </div>
+                                        <p>The order of the tasks does not matter to Gulp. It's more for readability than anything else.</p>
+                                        <div class="well well-sm">
+                                            <h5 id="whats-the-exclaim">What's the <code class="impt">!</code> on <code>line 4</code>?</h5>
+                                            <p>If you have some programming background, you'll know that <code class="impt">!</code> means 'not'. Here, it means <span class="text-info">exclude</span> a certain path. In other words, we're telling Del to exclude
+                                                the <code class="impt">vendors</code> folder from deletion.</p>
+                                            <p>By default, Del will automatically remove folders if they are empty. This will cause Gulp to complain that the <code>vendor</code> folder can't be found when tasks are run.</p>
+                                        </div>
+
+                                        <p>Now <kbd>run</kbd>:</p>
+                                        <div class="command-line">
+                                            <div class="command-line-header">
+                                                <i class="fa fa-circle fa-fw exit"></i><i class="fa fa-circle fa-fw minimize"></i><i class="fa fa-circle fa-fw maximize"></i> &nbsp;&nbsp;Terminal
+                                            </div>
+                                            <div class="command-line-body-end">
+                                                <ul>
+                                                    <li><span class="command-line-command">gulp</span> clear-vendor</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <p>You should see the <code class="impt">bootstrap</code> folder gone from the <code class="impt">static_repo</code> folder. Since Bootstrap is gone, refreshing this page will return it to the original <small class="text-muted">plain and ugly</small>                                            styles.</p>
+                                        <div class="alert alert-success">
+                                            <i class="fa fa-pencil-square-o fa-fw"></i> <small><strong>PRACTICE:</strong></small> Try to get Gulp to remove the <code>font-awesome</code> and <code>jquery</code> folders too.
+                                        </div>
+                                        <p><kbd>Re-run</kbd> <code class="impt">gulp copy-vendor</code> to restore the folders.</p>
+                                        <div class="alert alert-info">
+                                            <i class="fa fa-info-circle fa-fw"></i> <small><strong>TIP:</strong></small> You can press the <kbd>Up Arrow <i class="fa fa-arrow-up fa-fw"></i></kbd> and <kbd>Down Arrow <i class="fa fa-arrow-down fa-fw"></i></kbd>                                            keys to view previously run commands.
+                                        </div>
+
+
+                                        <h4 id="324" class="section-header-sub">3.2.4. The <code>update-vendor</code> Task</h4>
+                                        <p>Now let's create a 'super' task which will do the copying and deleting in one command.</p>
+                                        <p><kbd>Copy &amp; paste</kbd> this after the <code>clear-vendor</code> task:</p>
+                                        <pre>gulp.task('update-vendor', ['clear-vendor', 'copy-vendor']);</pre>
+                                        <p>Notice how there's no 'actual' code in this task? Also notice the <span class="tool-tip" title="['clear-vendor', 'copy-vendor']">array</span> which contains the names of the 2 previously created <span class="text-info">tasks</span>?
+                                            Go ahead and <kbd>execute</kbd> the <code class="impt">update-vendor</code> task.</p>
+                                        <p>Did you see the <code>clear-vendor</code> and <code>copy-vendor</code> tasks being executed? The tasks in the array will be executed by Gulp before any tasks defined in <code>update-vendor</code> (if any).</p>
+
+                                        <p>Anyway, your <code class="impt">gulpfile.js</code> should now look like this:</p>
+                                        <pre class="unselectable">var gulp = require('gulp');
+var del = require('del');
+
+gulp.task('copy-vendor', function() {
+    // bootstrap
+    gulp.src('./node_modules/bootstrap/dist/**')
+        .pipe(gulp.dest('vendor/bootstrap'));
+    console.log('~ copied bootstrap files');
+
+    // jquery
+    gulp.src('./node_modules/jquery/dist/**')
+        .pipe(gulp.dest('vendor/jquery'));
+    console.log('~ copied jquery files')
+
+    // font awesome
+    gulp.src([
+        './node_modules/font-awesome/**/*.css',
+        './node_modules/font-awesome/**/*-webfont.*'
+    ])
+        .pipe(gulp.dest('vendor/font-awesome'));
+    console.log('~ copied font awesome files');
+});
+
+gulp.task('clear-vendor', function() {
+    del.sync([
+        './vendor/bootstrap/**',
+        './vendor/font-awesome/**',
+        './vendor/jquery/**',
+        '!./vendor/'
+    ]);
+});
+
+gulp.task('update-vendor', ['clear-vendor', 'copy-vendor']);</pre>
+
+                                        <p>As usual, <kbd>commit</kbd> and <kbd>push</kbd> everything except the <code class="impt">node_modules</code> folder.</p>
+                                    </section>
+
+                                    <section class="section-last">
+                                        <h3 id="330" class="section-header">3.3. Extra Reads</h3>
+
+                                        <h4 id="331" class="section-header-sub">3.3.1. General Syntax</h4>
+                                        <pre>gulp.task('task-name', [other-tasks, to-run, before-task-name], function(){
+    // task code
+});</pre>
+                                        <p>Command: <code class="impt">gulp task-name</code></p>
+
+                                        <h4 id="332" class="section-header-sub">3.3.2. The <code>default</code> Gulp Task</h4>
+                                        <p>When you run the <code class="impt">gulp</code> command without giving a task name, Gulp automatically tries to execute a task with the <code class="impt">default</code> task name.</p>
+                                        <pre>gulp.task('default', function(){
+    // default task code
+});</pre>
+                                        <div class="command-line">
+                                            <div class="command-line-header">
+                                                <i class="fa fa-circle fa-fw exit"></i><i class="fa fa-circle fa-fw minimize"></i><i class="fa fa-circle fa-fw maximize"></i> &nbsp;&nbsp;Terminal
+                                            </div>
+                                            <div class="command-line-body-end">
+                                                <ul>
+                                                    <li><span class="command-line-command">gulp</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <p class="text-center"><a href="#top"><i class="fa fa-arrow-circle-up fa-fw"></i> Page Top</a> | <a href="#300"><i class="fa fa-arrow-up fa-fw"></i> Section Top</a></p>
+                                </div>
+                                <!-- #accordionGulp > panel-body end -->
+                            </div>
+                        </div>
+                        <div id="accordionWatch" class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 id="400" class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            4. Gulp Watch
+                                        </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
+                                <!-- #accordionWatch panel-body start -->
+                                <div class="panel-body">
+                                    <ul id="400Nav" class="nav nav-pills">
+                                        <li role="presentation"><a href="#410">4.1. Prepping</a></li>
+                                        <li role="presentation"><a href="#420">4.2. Gulp Tasks</a></li>
+                                        <li role="presentation"><a href="#430">4.3. The <code>watch</code> Task</a></li>
+                                    </ul>
+                                    <br/>
+                                    <p class="lead">This section takes a deeper look into Gulp. It will run you through writing automated Gulp tasks using the <code>watch</code> function. Our goal is to merge all <code>.css</code> files into a single minified one.</p>
+
+                                    <section>
+                                        <h3 id="410" class="section-header">4.1. Prepping</h3>
+
+                                        <h4 id="411" class="section-header-sub">4.1.1. Clean Up Code</h4>
+                                        <p>Before we start on the topic proper, let's clean up the code a bit.</p>
+                                        <p>Once again, <kbd>open</kbd> up your <span class="tool-tip" title="Windows: CMD/PowerShell; Mac: Terminal">command line</span> and <kbd>navigate</kbd> to your <code class="impt">static_repo</code> folder.</p>
+                                        <p>Let's create some constants to store the paths to our <code class="impt">node_modules</code> and <code class="impt">vendor</code> folders.</p>
+                                        <p><kbd>Open</kbd> up your <code class="impt">gulpfile.js</code> and <kbd>copy &amp; paste</kbd> this just under your <code class="impt">require</code> statememts:</p>
+                                        <pre>const NODE_PATH = './node_modules/';</pre>
+                                        <p>Now look through all your <strong>paths</strong> and <kbd>modify</kbd> them so they follow this <em>pattern</em>:</p>
+                                        <pre>gulp.src(NODE_PATH + '/jquery/dist/**')</pre>
+                                        <p>So that your <code>gulpfile.js</code> looks like this:</p>
+                                        <pre class="unselectable">var gulp = require('gulp');
+var del = require('del');
+
+const NODE_PATH = './node_modules/';
+
+gulp.task('copy-vendor', function() {
+    // jquery
+    gulp.src(NODE_PATH + 'jquery/dist/**')
+        .pipe(gulp.dest('vendor/jquery'));
+    console.log('~ copied jquery files')
+
+    // bootstrap
+    gulp.src(NODE_PATH + 'bootstrap/dist/**')
+        .pipe(gulp.dest('vendor/bootstrap'));
+    console.log('~ copied bootstrap files');
+
+    // font awesome
+    gulp.src([
+        NODE_PATH + 'font-awesome/**/*.css',
+        NODE_PATH + 'font-awesome/**/*-webfont.*'
+    ])
+        .pipe(gulp.dest('vendor/font-awesome'));
+    console.log('~ copied font awesome files');
+});
+
+gulp.task('clear-vendor', function() {
+    del.sync([
+        './vendor/bootstrap/**',
+        './vendor/font-awesome/**',
+        './vendor/jquery/**',
+        '!./vendor/'
+    ]);
+});
+
+gulp.task('update-vendor', ['clear-vendor', 'copy-vendor']);</pre>
+                                        <p>What's the point of this? We are simply extracting the path to the <code>node_modules</code> folder and storing it in a single variable so that if <span class="tool-tip" title="node_modules">it</span> ever changes
+                                            (
+                                            <em class="text-muted">though highly unlikely</em>), we only have to change one location (the <code class="impt">NODE_PATH</code> constant) instead of multiple ones. Why <code>const</code> over <code>var</code>                                            is out of the scope of this exercise.</p>
+                                        <p>Anyway, <kbd>do the same</kbd> for the <code class="impt">vendor</code> path; using <code class="impt">VENDOR_PATH</code> over <code>NODE_PATH</code>.</p>
+                                        <p>Your <code>gulpfile.js</code> should now look like this:</p>
+                                        <pre class="unselectable">var gulp = require('gulp');
+var del = require('del');
+
+const NODE_PATH = './node_modules/';
+const VENDOR_PATH = './vendor/';
+
+gulp.task('copy-vendor', function() {
+    // jquery
+    gulp.src(NODE_PATH + 'jquery/dist/**')
+        .pipe(gulp.dest(VENDOR_PATH + '/jquery'));
+    console.log('~ copied jquery files')
+
+    // bootstrap
+    gulp.src(NODE_PATH + 'bootstrap/dist/**')
+        .pipe(gulp.dest(VENDOR_PATH + '/bootstrap'));
+    console.log('~ copied bootstrap files');
+
+    // font awesome
+    gulp.src([
+        NODE_PATH + 'font-awesome/**/*.css',
+        NODE_PATH + 'font-awesome/**/*-webfont.*'
+    ])
+        .pipe(gulp.dest(VENDOR_PATH + '/font-awesome'));
+    console.log('~ copied font awesome files');
+});
+
+gulp.task('clear-vendor', function() {
+    del.sync([
+        VENDOR_PATH + 'bootstrap/**',
+        VENDOR_PATH + 'font-awesome/**',
+        VENDOR_PATH + 'jquery/**',
+        '!' + VENDOR_PATH
+    ]);
+});
+
+gulp.task('update-vendor', ['clear-vendor', 'copy-vendor']);</pre>
+                                        <p><kbd>Run</kbd> your <span class="text-info">Gulp tasks</span> to make sure your code is working.</p>
+
+
+                                        <h4 id="412" class="section-header-sub">4.1.2. Install Packages</h4>
+                                        <p>We'll need to install more packages that will assist us in merging and compressing our <code>.css</code> files.</p>
+                                        <p>Go ahead and <kbd>install</kbd> these <span class="tool-tip" title="--save-dev">dev-dependent</span> packages:
+                                            <ul>
+                                                <li><code>gulp-clean-css</code></li>
+                                                <li><code>gulp-concat</code></li>
+                                            </ul>
+                                        </p>
+                                        <p><code>gulp-concat</code> does the merging while <code>gulp-clean-css</code> minifies the <code>.css</code> files.</p>
+                                        <p>If done correctly, you should see these packages listed under the <code>devDependencies</code> section of your <code>package.json</code>.</p>
+                                        <div class="alert alert-success">
+                                            <i class="fa fa-pencil-square-o fa-fw"></i> <small><strong>PRACTICE:</strong></small> Now <kbd>import</kbd> these <span class="tool-tip" title="gulp-clean-css and gulp-concat">packages</span> into your <code>gulpfile.js</code>.
+                                        </div>
+                                    </section>
+
+                                    <section>
+                                        <h3 id="420" class="section-header">4.2. Gulp Tasks</h3>
+
+                                        <h4 id="421" class="section-header-sub">4.2.1 <code>minify-css</code> Task</h4>
+                                        <p>Let's <kbd>declare</kbd> a <code>const</code> to store the path to the <code>src</code> folder. The <code class="impt">compatibility: 'ie8'</code> tells <code class="impt">clean-css</code> to generate CSS that's
+                                            compatible with Internet Explorer 8 and earlier.</p>
+                                        <pre>const SRC_PATH = './src/';</pre>
+                                        <p>Now <kbd>copy &amp; paste</kbd> the <code>minify-css</code> code above the <code>copy-vendor</code> task:</p>
+                                        <pre class="unselectable">gulp.task('minify-css', function() {
+    gulp.src([
+        SRC_PATH + '**/*.css'
+    ])
+    .pipe(gulp_clean_css({compatibility: 'ie8'}))
+    .pipe(gulp_concat('my-css.min.css'))
+    .pipe(gulp.dest('dist'));
+});</pre>
+                                        <p>If done correctly, you should see a <code>my-css.min.css</code> in the <code class="impt">dist</code> folder.</p>
+                                        <p><kbd>Uncomment</kbd> the line just under <code>nag-styles.css</code> in <code>index.html</code> and <kbd>refresh</kbd> the page. If done correctly, you should see some styles on the packages columns, a light blue/cyan
+                                            background and....</p>
+                                        <div class="panel panel-default">
+                                            <div class="panel-body">
+                                                <p>Packages used in this exercise:</p>
+                                                <div class="row grid-packages">
+                                                    <div class="col-md-3">jQuery 2</div>
+                                                    <div class="col-md-3">Bootstrap 3</div>
+                                                    <div class="col-md-3">Font Awesome 4</div>
+                                                    <div class="col-md-3">Gulp</div>
+                                                    <div class="col-md-3">Del</div>
+                                                    <div class="col-md-3">Gulp Minified CSS</div>
+                                                    <div class="col-md-3">Gulp Concat</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p><strong class="text-danger">Aaaacck!</strong> Borders eveywhere! Well the minification has obviously worked...</p>
+                                        <p>If you opened up <code>dist/my-css.min.css</code>, you'll see a line <code>div{border:thin solid #ff0...</code>. <strong class="text-danger">Don't</strong> remove that line manually.</p>
+                                        <p>We just need to <kbd>omit</kbd> the <code>border-everything.css</code> file that's causing this. Can you guess how we're going to do this in Gulp?</p>
+
+                                        <div class="alert alert-warning">
+                                            <i class="fa fa-lightbulb-o fa-fw"></i> <small><strong>HINT:</strong></small> See <a href="#323">3. Gulp &gt; 3.2. Gulp Tasks &gt; 3.2.3. The <code>clear-vendor</code> Task</a>
+                                        </div>
+                                        <p>Go back to your <code>gulpfile.js</code> and <kbd>add</kbd> a <code>comma (,)</code> to the end of <code>SRC_PATH + '**/*.css'</code>. Then <kbd>copy &amp; paste</kbd> this line just under it:</p>
+                                        <pre>'!' + SRC_PATH + 'border-eveything.css'</pre>
+                                        <p>So that your <code>minify-css</code> task looks like this:</p>
+                                        <pre class="unselectable">gulp.task('minify-css', function() {
+    gulp.src([
+        SRC_PATH + '**/*.css',
+        '!' + SRC_PATH + 'border-eveything.css'
+    ])
+    .pipe(gulp_clean_css({compatibility: 'ie8'}))
+    .pipe(gulp_concat('my-css.min.css'))
+    .pipe(gulp.dest('dist'));
+});
+</pre>
+                                        <p><kbd>Re-run</kbd> and <kbd>refresh</kbd> this page.</p>
+                                        <p>The <em>ugly</em> borders should be gone, but the page's background and the packages' columns styles should remain. You can use
+                                            <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#testModal">
+                                                    This Modal <i class="fa fa-rocket fa-fw"></i>
+                                                </button>&nbsp; to see the columns' styles too.
+                                        </p>
+                                    </section>
+
+                                    <section class="section-last">
+                                        <h3 id="420" class="section-header">4.2. The <code>watch</code> Task</h3>
+                                        <p>Now let's see how to automate the <code>minify-css</code> task using the Gulp <code class="impt">watch</code> function.</p>
+                                        <p><kbd>Copy &amp; paste</kbd> this code just above the <code>minify-css</code> task and <kbd>execute</kbd> it.</p>
+                                        <pre>gulp.task('watch', function()
+{
+    gulp.watch(SRC_PATH + '**/*.css', ['minify-css']);
+});</pre>
+                                        <p>Technically, the task could be called any name&ndash;it's just a <em>task name</em>. But 'watch' is a standard convention name.</p>
+                                        <p>At this point, you might notice that you are unable run any commands on the <span class="tool-tip" title="Windows: CMD/PowerShell; Mac: Terminal">command line</span> as Gulp is holding it up. This is how you can
+                                            use Gulp to help automate certain tasks like merging &amp; compressing styles and scripts, run unit tests, etc.</p>
+                                        <p>Anyway, go ahead and <kbd>change</kbd> any of the <code class="impt">.css</code> files (except <code>border-everything.css</code>) in the <code class="impt">src</code> folder&ndash;e.g. <em>change the background colour</em>.
+                                            Make sure to <kbd>save</kbd> your changes.</p>
+                                        <p>Did you notice the <code class="impt">minify-css</code> task being executed in the <span class="tool-tip" title="Windows: CMD/PowerShell; Mac: Terminal">command line</span>?</p>
+
+                                        <p>In the end, your <code class="impt">gulpfile.js</code> should look like this:</p>
+                                        <pre class="unselectable">var gulp = require('gulp');
+var del = require('del');
+var gulp_clean_css = require('gulp-clean-css');
+var gulp_concat = require('gulp-concat');
+
+const NODE_PATH = './node_modules/';
+const VENDOR_PATH = './vendor/';
+const SRC_PATH = './src/';
+
+gulp.task('watch', function()
+{
+    gulp.watch(SRC_PATH + '**/*.css', ['minify-css']);
+});
+
+gulp.task('minify-css', function() {
+    gulp.src([
+        SRC_PATH + '**/*.css',
+        '!' + SRC_PATH + 'border-everything.css'
+    ])
+    .pipe(gulp_clean_css({compatibility: 'ie8'}))
+    .pipe(gulp_concat('my-css.min.css'))
+    .pipe(gulp.dest('dist'));
+});
+
+// --- manage vendor ---
+gulp.task('copy-vendor', function() {
+    // jquery
+    gulp.src(NODE_PATH + 'jquery/dist/**')
+        .pipe(gulp.dest(VENDOR_PATH + '/jquery'));
+    console.log('~ copied jquery files')
+
+    // bootstrap
+    gulp.src(NODE_PATH + 'bootstrap/dist/**')
+        .pipe(gulp.dest(VENDOR_PATH + '/bootstrap'));
+    console.log('~ copied bootstrap files');
+
+    // font awesome
+    gulp.src([
+        NODE_PATH + 'font-awesome/**/*.css',
+        NODE_PATH + 'font-awesome/**/*-webfont.*'
+    ])
+        .pipe(gulp.dest(VENDOR_PATH + '/font-awesome'));
+    console.log('~ copied font awesome files');
+});
+
+gulp.task('clear-vendor', function() {
+    del.sync([
+        VENDOR_PATH + 'bootstrap/**',
+        VENDOR_PATH + 'font-awesome/**',
+        VENDOR_PATH + 'jquery/**',
+        '!' + VENDOR_PATH
+    ]);
+});
+
+gulp.task('update-vendor', ['clear-vendor', 'copy-vendor']);
+// --- manage vendor ---</pre>
+
+                                        <p>You know the drill... <kbd>commit</kbd> and <kbd>push</kbd> all changes except <code class="impt">node_modules</code> folder to <code class="impt">origin</code>.</p>
+                                    </section>
+
+                                    <p class="text-center"><a href="#top"><i class="fa fa-arrow-circle-up fa-fw"></i> Page Top</a> | <a href="#400"><i class="fa fa-arrow-up fa-fw"></i> Section Top</a></p>
+                                </div>
+                                <!-- #accordionWatch panel-body end -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- #accordion end -->
+
+                    <p class="text-info">You've come to the end of the exercise. Hope you've learned something, and most importantly... had <strong>fun</strong>!</p>
+
+                    <!-- #modalWell start -->
+                    <div id="modalWell" class="well well-sm">
+                        <p>
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#testModal">
+                                    Test Modal <i class="fa fa-rocket fa-fw"></i>
+                                </button>&nbsp;&nbsp;
+                            <strong>&lt;&lt;&lt;</strong> Use this modal to test proper loading of resources.
+                        </p>
+
+                        <p>A modal is a quick way to test if the <code>jQuery</code> and <code>bootstrap.js</code> or <code>bootstrap.min.js</code> were loaded properly. Otherwise the modal won't launch.</p>
+                    </div>
+                    <!-- #modalWell end -->
+
+                </div>
+            </div>
+            <!-- #exercisePanel end -->
+        </div>
+        <!-- #mainCol end -->
+
+        <!-- #sideCol start -->
+        <div id="sideCol" class="col-md-3">
+            <!-- #onThisPagePanel start -->
+            <div id="onThisPagePanel" class="panel panel-info">
+                <div class="panel-heading">
+                    <h2 class="panel-title"><i class="fa fa-bookmark fa-fw"></i> On this Page</h2>
+                </div>
+                <div class="list-group">
+                    <a class="list-group-item" href="#accordionIntro">1. Into and Setup</a>
+                    <a class="list-group-item" href="#accordionNpm">2. Node &amp; NPM</a>
+                    <a class="list-group-item" href="#accordionGulp">3. Gulp</a>
+                    <a class="list-group-item" href="#accordionWatch">4. Gulp Watch</a>
+                    <a class="list-group-item" href="#top"><i class="fa fa-arrow-circle-up fa-fw"></i> Back to Top</a>
+                </div>
+            </div>
+            <!-- #onThisPagePanel end -->
+
+            <!-- #commandLinePanel start -->
+            <div id="commandLinePanel" class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title"><i class="fa fa-terminal fa-fw"></i> Command Line Commands</h2>
+                </div>
+                <div class="list-group">
+                    <a class="list-group-item" href="https://commandwindows.com/command3.htm" target="_blank"><i class="fa fa-windows fa-fw"></i> CMD</a>
+                    <a class="list-group-item" href="https://blogs.technet.microsoft.com/heyscriptingguy/2015/06/11/table-of-basic-powershell-commands/" target="_blank"><i class="fa fa-windows fa-fw"></i> PowerShell (Vista and later)</a>
+                    <a class="list-group-item" href="https://ss64.com/osx/" target="_blank"><i class="fa fa-apple fa-fw"></i> Mac Terminal</a>
+                </div>
+            </div>
+            <!-- #commandLinePanel end -->
+
+            <!-- #usefulLinksPanel start -->
+            <div id="usefulLinksPanel" class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title"><i class="fa fa-external-link fa-fw"></i> External Links</h2>
+                </div>
+                <div class="list-group">
+                    <a class="list-group-item" href="https://nodejs.org/en/" target="_blank">Node JS</a>
+                    <a class="list-group-item" href="https://www.npmjs.com/" target="_blank">NPM JS</a>
+                    <a class="list-group-item" href="https://gulpjs.com/" target="_blank">Gulp JS</a>
+                    <a class="list-group-item" href="https://www.npmjs.com/package/gulp" target="_blank">Gulp NPM Package</a>
+                    <a class="list-group-item" href="#" target="_blank">Udemy Gulp Course (Update)</a>
+                    <a class="list-group-item" href="https://bower.io/" target="_blank">Bower JS</a>
+                    <a class="list-group-item" href="https://gruntjs.com/" target="_blank">Grunt JS</a>
+                </div>
+            </div>
+            <!-- #usefulLinksPanel end -->
+        </div>
+        <!-- #sideCol end -->
+    </div>
+    <!-- #mainRow end -->
+    <br/>
+
+    <!-- .footer start -->
+    <footer>
+        <div class="row">
+            <div class="col-md-9 text-center">
+                <a href="#top"><i class="fa fa-arrow-up fa-fw"></i> Back to top</a>
+            </div>
+            <div class="col-md-3 text-right text-muted">
+                <small><em>written by Davina Leong, Aug 2017</em></small>
+            </div>
+        </div>
+    </footer>
+    <!-- .footer end -->
+    <br/>
+    <br/>
+    </div>
+    <!-- .container end -->
+
+    <!-- #testModal start -->
+    <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="testModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="testModalLabel">Test Resources</h4>
+                </div>
+                <div class="modal-body">
+                    <h4>These content should be visible w/o <strong>Bootstrap</strong>, but hidden with jQuery and Bootstrap's resources properly loaded.</h4>
+                    <div class="text-center">
+                        <img src="./assets/logo.png" />
+                    </div>
+
+                    <h4>Test Gulp</h4>
+                    <p>If done correctly, you should see:</p>
+                    <ul>
+                        <li>Some labels and icons.</li>
+                        <li>This page has been magically beautified... <strong><span class="text-primary">&gt;u&lt;</span></strong>.</li>
+                        <li>This modal launched... tests JavaScripts</li>
+                    </ul>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <p>
+                                <span class="label label-primary">Windows <i class="fa fa-windows fa-fw"></i></span>&nbsp;
+                                <span class="label label-default">Mac <i class="fa fa-apple fa-fw"></i></span>&nbsp;
+                                <span class="label label-success">Android <i class="fa fa-android fa-fw"></i></span>
+                            </p>
+                        </div>
+                    </div>
+                    <br/>
+
+                    <h4>Test Gulp Watch</h4>
+                    <p>If done correctly, the <code>div columns</code> should have:</p>
+                    <ul>
+                        <li>Page background is light blue/cyan.</li>
+                        <li>Coloured text</li>
+                        <li>Background colour</li>
+                        <li>Border</li>
+                        <li>Text centered</li>
+                    </ul>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <p>Packages used in this exercise:</p>
+                            <div class="row grid-packages">
+                                <div class="col-md-4">jQuery 2</div>
+                                <div class="col-md-4">Bootstrap 3</div>
+                                <div class="col-md-4">Font Awesome 4</div>
+                                <div class="col-md-4">Gulp</div>
+                                <div class="col-md-4">Del</div>
+                                <div class="col-md-4">Gulp Minified CSS</div>
+                                <div class="col-md-4">Gulp Concat</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close <i class="fa fa-times fa-fw"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #testModal end -->
+
+
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
