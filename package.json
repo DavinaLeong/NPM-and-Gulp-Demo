@@ -1,0 +1,27 @@
+{
+    "name": "npm-and-gulp",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://DavinaLSY@bitbucket.org/DavinaLSY/npm-and-gulp.git"
+    },
+    "author": "Davina Leong",
+    "license": "ISC",
+    "homepage": "https://bitbucket.org/DavinaLSY/npm-and-gulp#readme",
+    "dependencies": {
+        "bootstrap": "^3.3.7",
+        "font-awesome": "^4.7.0",
+        "jquery": "~2.2.4"
+    },
+    "devDependencies": {
+        "del": "^3.0.0",
+        "gulp": "^3.9.1",
+        "gulp-clean-css": "^3.7.0",
+        "gulp-concat": "^2.6.1"
+    }
+}

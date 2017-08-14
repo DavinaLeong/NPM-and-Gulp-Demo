@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="./vendor/font-awesome/css/font-awesome.min.css" type="text/css" />
+
+    <link rel="stylesheet" href="./dist/my-css.min.css" type="text/css" />
+    <link rel="icon" href="./assets/favicon.png" type="image/png" />
+
+    <title>NPM &amp; Exercise</title>
+</head>
+<body>
+    <!-- container start -->
+    <div class="container">
+        <h1 class="page-header"><i class="fa fa-beer fa-fw"></i> NPM &amp; Gulp Exercise</h1>
+        <p class="lead">Here are some 'dummy' Bootstrap componenets to test proper loading of resources...</p>
+        <p><strong>WARNING!</strong> Requires extensive use of the command line / terminal.</p>
+
+        <div class="row">
+            <!-- .col-md-8 start -->
+            <div class="col-md-8">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h2 class="panel-title"><i class="fa fa-bullseye fa-fw"></i> Exercise Goals</h2>
+                    </div>
+                    <div class="panel-body">
+                        <ol>
+                            <li>Init and install NPM</li>
+                            <li>Install packages via NPM:
+                                <ul>
+                                    <li>jQuery 2.1.4</li>
+                                    <li>Bootstrap</li>
+                                    <li>Font Awesome</li>
+                                </ul>
+                            </li>
+                            <li>Install Gulp CLI</li>
+                            <li>Install Gulp</li>
+                            <li>Run-once Gulp tasks</li>
+                            <li>Looping Gulp task (Gulp watch)</li>
+                        </ol>
+                    </div>
+                    <div class="panel-footer">
+                        <p>Notable commands:</p>
+                        <h4>NPM</h4>
+                        <p>Install a <strong>local</strong> package:</p>
+                        <pre>npm install --save|--save-dev &lt;package-name&gt;@&lt;version.number&gt;</pre>
+                        <p>Install a <strong>global</strong> package:</p>
+                        <pre>npm install -g &lt;package-name&gt;@&lt;version.number&gt;</pre>
+                        <p>Shorthand:</p>
+                        <pre>npm i --save|--save-dev &lt;package-name&gt;@&lt;version.number&gt;</pre>
+
+                        <p>Other common commands:</p>
+                        <p><code>npm uninstall|un &lt;package-name&gt;</code> - uninstall a package</p>
+                        <p><code>npm ls</code> - lists all installed packages</p>
+                        <hr/>
+
+                        <h4>Gulp</h4>
+                        <p>Run a Gulp task:</p>
+                        <pre>gulp &lt;task-name&gt;</pre>
+                        <p>Note: the <code>task-name</code> can be omitted for a 'default' named task.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- .col-md-8 end -->
+
+            <!-- .col-md-4 start -->
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 class="panel-title"><i class="fa fa-check fa-fw"></i> Test Resources</h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Packages used in this exercise:</p>
+                        <p>The text below should have styles if your <code>minified-css</code> is working.</p>
+                        <div id="grid-packages" class="row">
+                            <div class="col-md-6">jQuery 2</div>
+                            <div class="col-md-6">Bootstrap 3</div>
+                            <div class="col-md-6">Font Awesome 4</div>
+                            <div class="col-md-6 dev">Gulp</div>
+                            <div class="col-md-6 dev">Del</div>
+                            <div class="col-md-6 dev">Gulp Minified CSS</div>
+                            <div class="col-md-6 dev">Gulp Concat</div>
+                        </div>
+                        <br/>
+
+                        <p>You can also click <a href="./final.html">here</a> to see an image of the final result.</p>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#testModal">
+                            Test Modal <i class="fa fa-rocket fa-fw"></i>
+                        </button>&nbsp;&nbsp;
+                        <b>&lt;&lt;&lt;</b> use modal to test JS scripts.
+                    </div>
+                </div>
+            </div>
+            <!-- .col-md-4 end -->
+        </div>
+
+        <div style="height: 30px">&nbsp;</div>
+    </div>
+    <!-- container end -->
+
+    <!-- #testModal start -->
+    <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="testModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="testModalLabel">Test Resources</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Packages used in this exercise:</p>
+                    <p>The text below should have styles if your <code>minified-css</code> is working.</p>
+                    <div id="grid-packages" class="row">
+                        <div class="col-md-6">jQuery 2</div>
+                        <div class="col-md-6">Bootstrap 3</div>
+                        <div class="col-md-6">Font Awesome 4</div>
+                        <div class="col-md-6 dev">Gulp</div>
+                        <div class="col-md-6 dev">Del</div>
+                        <div class="col-md-6 dev">Gulp Minified CSS</div>
+                        <div class="col-md-6 dev">Gulp Concat</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close <i class="fa fa-times fa-fw"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #testModal end -->
+
+    <script src="./vendor/jquery/jquery.min.js"></script>
+    <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

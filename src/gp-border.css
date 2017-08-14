@@ -1,0 +1,7 @@
+#grid-packages > div {
+    border: thin solid #c66;
+}
+
+#grid-packages > div.dev {
+    border: thin solid #6c6;
+}
