@@ -1,4 +1,4 @@
-# NPM-and-Gulp-Demo
+# NPM and Gulp Demo
 
 ## Resources
 
